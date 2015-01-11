@@ -7,14 +7,17 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+*.exe
+*.o
+.exe
+.o
 
 # Windows Installer files
 *.cab
 *.msi
 *.msm
 *.msp
-*.exe
-*.o
+
 
 # Windows shortcuts
 *.lnk
