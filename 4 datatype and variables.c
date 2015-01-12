@@ -11,7 +11,8 @@ int main(){
     printf("%d %d\n" , x, y);
     printf("%d %d\n" , X+x, Y+y);
     printf("%d %d\n" , X*x, Y*y);
-    printf("%d %d\n" , printf("%d %d\n" , X*x, Y*y);X/x, Y/y);
+    printf("%d %d\n" , X/x, Y/y);
+
     getch();
     return 0;
 }
