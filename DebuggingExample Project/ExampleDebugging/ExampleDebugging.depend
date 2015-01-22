@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1421915359 source:e:\working\github\c-programming-basic\debuggingexample project\exampledebugging\main.c
+	<stdio.h>
+
+1421935953 source:e:\working\github\c-programming-basic\debuggingexample project\exampledebugging\debugging2.c
+	<stdio.h>
+
+1421936357 source:e:\working\github\c-programming-basic\debuggingexample project\exampledebugging\debugging3.c
+	<stdio.h>
+
