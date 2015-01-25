@@ -26,23 +26,45 @@ int get_decimal_to_binary(int decimal){
     // ------- (AND)
     // 0 0 0 0 (only 0)
     // right shift and so on
-    while(decimal){
-        single_binary_bit = decimal & 1; // only 1 & 1 returns 1
+    bool isNegative = decimal < 0;
+    if(isNegative){
+        decimal = ~decimal + 1;
+    }
+    while(decimal != 0){
+         // only 1 & 1 returns 1
+        single_binary_bit = decimal & 1;
+        if(isNegative){
+            single_binary_bit = single_binary_bit ^ 1;
+        }
         binary += decimal_place * single_binary_bit;
-        decimal = decimal >> 1;
+        decimal = decimal  >> 1 ;
         decimal_place *= 10;
     }
 
     return binary;
 }
 
-int main() {
-    printf("input decimal as int to get binary:\n");
-    int decimal = 0;
+void take_decimal_input(int &decimal){
+    printf("input number in decimal(int):\n");
     scanf("%d" , &decimal);
+}
+
+void print_binary(int decimal, int binary){
+    printf("\ndecimal: %d\n", decimal);
+    printf("binary: %d\n", binary);
+}
+
+int main() {
+
+    int decimal = 0;
+    take_decimal_input(decimal);
     int binary = get_decimal_to_binary(decimal);
 
-    printf("Here is your binary: %d\n", binary);
+    print_binary(decimal, binary);
+    decimal = decimal >> 1;
+    printf("\nRight Shifted 1 time.");
+    binary = get_decimal_to_binary(decimal);
+    print_binary(decimal, binary);
 
     // main() it's a recursive function
     // and it is highly inefficient
@@ -50,3 +72,6 @@ int main() {
     main();
     return 0;
 }
+
+
+
