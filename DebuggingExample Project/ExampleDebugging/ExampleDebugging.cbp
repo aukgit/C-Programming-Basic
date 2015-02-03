@@ -31,9 +31,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="debugging3.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="0001. decimal to bin using right shift.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

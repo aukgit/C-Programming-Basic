@@ -5,40 +5,18 @@
 // dec to bin using right shift
 
 
-int get_decimal_to_binary(int decimal){
-    int binary = 0,
-        single_binary_bit = 0,
-        decimal_place = 1;
-    // let's assume your decimal is 12
-    // 8 4 2 1
-    // 1 1 0 0
+char * get_decimal_to_binary(int decimal){
+    int     single_binary_bit = 0,
+            index = 0;
 
-    // use and gate
-    // 1 1 0 0
-    // 0 0 0 1
-    // ------- (AND) 1 & 1 =only returns 1
-    // 0 0 0 0
-    // only gives 0 or 1 as a result.
-    // then right shift again decimal >> 1
-    // so now the number is
-    // 0 1 1 0
-    // 0 0 0 1
-    // ------- (AND)
-    // 0 0 0 0 (only 0)
-    // right shift and so on
-    bool isNegative = decimal < 0;
-    if(isNegative){
-        decimal = ~decimal + 1;
-    }
+    char *  binary = new char[32];
+
+
     while(decimal != 0){
          // only 1 & 1 returns 1
         single_binary_bit = decimal & 1;
-        if(isNegative){
-            single_binary_bit = single_binary_bit ^ 1;
-        }
-        binary += decimal_place * single_binary_bit;
-        decimal = decimal  >> 1 ;
-        decimal_place *= 10;
+        binary[index++] += single_binary_bit;
+        decimal = decimal  / 2 ;
     }
 
     return binary;
@@ -49,9 +27,12 @@ void take_decimal_input(int &decimal){
     scanf("%d" , &decimal);
 }
 
-void print_binary(int decimal, int binary){
+void print_binary(int decimal, char * binary){
+    if(decimal >= 0){
+
+    }
     printf("\ndecimal: %d\n", decimal);
-    printf("binary: %d\n", binary);
+    printf("binary: %s\n", binary);
 }
 
 int main() {

@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 
 // Alim Ul Karim
 // dec to bin using right shift
@@ -29,20 +28,33 @@ int get_decimal_to_binary(int decimal){
     while(decimal){
         single_binary_bit = decimal & 1; // only 1 & 1 returns 1
         binary += decimal_place * single_binary_bit;
-        decimal = decimal >> 1;
+        decimal = decimal / 2;
         decimal_place *= 10;
     }
 
     return binary;
 }
 
-int main() {
-    printf("input decimal as int to get binary:\n");
-    int decimal = 0;
+void take_decimal_input(int &decimal){
+    printf("input number in decimal(int):\n");
     scanf("%d" , &decimal);
-    int binary = get_decimal_to_binary(decimal);
+}
 
-    printf("Here is your binary: %d\n", binary);
+void print_binary(char * operation, int decimal, int binary){
+    printf("\noperation executed: %s\n", operation);
+    printf("decimal: %d\n", decimal);
+    printf("binary: %d\n", binary);
+}
+
+int main() {
+    //printf("input decimal as int to get binary:\n");
+    int decimal = 0;
+    take_decimal_input(decimal);
+    decimal = ~decimal;
+
+    int binary = get_decimal_to_binary(decimal);
+    print_binary("~inverted test",decimal, binary);
+
 
     // main() it's a recursive function
     // and it is highly inefficient
