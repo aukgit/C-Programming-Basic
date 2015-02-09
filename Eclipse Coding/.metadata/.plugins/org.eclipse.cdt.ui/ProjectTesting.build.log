@@ -1,0 +1,7 @@
+02:11:51 **** Incremental Build of configuration Release for project ProjectTesting ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o "0001. Hello World.o" "..\\0001. Hello World.cpp" 
+g++ -o ProjectTesting.exe "0001. Hello World.o" 
+
+02:11:51 Build Finished (took 188ms)
+

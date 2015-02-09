@@ -38,6 +38,7 @@ int main() {
                          st_marks[i]/4.0+
                          final_marks[i]/2.0;
     }
+
     for(i=1; i<=40; i++) {
         printf("Roll NO:%d Total Marks:%0.0lf\n",i,total_marks[i]);
     }
