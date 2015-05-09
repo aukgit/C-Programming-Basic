@@ -1,7 +1,9 @@
-02:11:51 **** Incremental Build of configuration Release for project ProjectTesting ****
+13:46:57 **** Incremental Build of configuration Release for project ProjectTesting ****
 Info: Internal Builder is used for build
 g++ -O3 -Wall -c -fmessage-length=0 -o "0001. Hello World.o" "..\\0001. Hello World.cpp" 
-g++ -o ProjectTesting.exe "0001. Hello World.o" 
+g++: error: ..\0001. Hello World.cpp: No such file or directory
+g++: fatal error: no input files
+compilation terminated.
 
-02:11:51 Build Finished (took 188ms)
+13:46:57 Build Finished (took 67ms)
 
